@@ -21,19 +21,33 @@ This shell was built and tested on Ubuntu 14.04 LTS.
 Features
 
 	Display a prompt and wait for the user to type a command.
+
 	 A command line always ends with a new line.
+
 	If an executable cannot be found, print an error message and display the prompt again.
+
 	Handle errors.
-	Handling the “end of file” condition (Ctrl+D)
-	Handling the command line with arguments
-	Handle the PATH
-Support the exit features and the exit status
-	Handle the Ctrl-C to not terminate the shell
-	Handling the command separator ;
-	Handling && and || logical operators
-	Handle variable replacements $? and $$
-	Handle the comments #
-Support the history feature
+
+	Handling the “end of file” condition (Ctrl+D).
+
+	Handling the command line with arguments.
+
+	Handle the PATH.
+
+Support the exit features and the exit status.
+
+	Handle the Ctrl-C to not terminate the shell.
+
+	Handling the command separator.
+
+	Handling && and || logical operators.
+
+	Handle variable replacements $? and $$.
+
+	Handle the comments #.
+
+Support the history feature.
+
 Support the file input
 
 Installation: Getting HSH
@@ -43,11 +57,17 @@ Clone the repository and compile the files into an executable using the GCC comp
 Basic Usage  
 
 •	First, Fork this Repository Learn how to fork repo.
+
 •	Then Clone Learn how to clone .
+
 •	Create an executable by running the following command:
+
 •	gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
 •	From there, type in the following command and press your enter button.
+
 •	./hsh
+
 •	Final step: ENJOY!
 
 Example 💻
@@ -57,12 +77,17 @@ ls -la
 Contributors:
 
 •	Agnes NARH
+
 •	Veronica GYASI
+
 Acknowledgments:
 
 •	Fellow cohort members
+
 •	The creators of the C language.
+
 •	Our software engineer-in-residence.
+
 •	Betty Holberton | Alx-Africa .
  
 
