@@ -6,7 +6,6 @@ Thehell serves, as a practical exercise to replicate the functionalities of a si
 COPYRIGHT
 Copyright (C) 2023 by Agnes NARH and Veronica GYASI
 All rights reserved
-
 Description:
 This shell was written in C and is based on the Thompsonhell.
 
@@ -31,8 +30,7 @@ Features
 upport the file input
 Installation: Getting HSH
 Clone the repository and compile the files into an executable using the GCC compiler
-
-Basic Usage  💡
+Basic Usage  
 •	First, Fork this Repository Learn how to fork repo.
 •	Then Clone Learn how to clone .
 •	Create an executable by running the following command:
@@ -42,7 +40,7 @@ Basic Usage  💡
 •	Final step: ENJOY!
 
 Example 💻
-ls –la 
+ls -la 
  
 Contributors:
 •	Agnes NARH
@@ -52,10 +50,6 @@ Acknowledgments:
 •	The creators of the C language.
 •	Our software engineer-in-residence.
 •	Betty Holberton | Alx-Africa .
-
-
-
-
-
+ 
 
 
