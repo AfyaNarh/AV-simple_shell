@@ -1,7 +1,7 @@
-#include “shell.h”
+#include "shell.h"
 
 /**
- * sum_numb -um two numbers.
+ * sum_numb - sum two numbers.
  * @a: First number.
  * @v:econd number.
  * Return: The sum of a and v.
