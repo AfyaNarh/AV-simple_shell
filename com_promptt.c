@@ -1,60 +1,70 @@
 #include "shell.h"
 
-void command_prompt(char **av, char **env)
+void prompt_command(char **av, char **env)
+
 {
 	char *string = NULL;
 	size_t n = 0;
-	ssize_t command;
-	int status;
-	const int Max_Command = 10;
+	int a, status, b;
 	char *argv[Max_Command];
 	pid_t child_pid;
+	char prompt[] = "Simple_shell$ ";
 
-	while (true)
+	(void) av;
+
+	while (1)
 	{
-		if (isatty(STDIN_FILENO))
-		{
-			printf("simple_shell$  ");
-			fflush(stdout);
-		}
+		write(STDOUT_FILENO, prompt, strlen(prompt));
+		character = getline(&string, &n, stdin);
 
-		command = getline(&string, &n, stdin);
-		if (command == -1)
+		if (character == -1)
 		{
 			free(string);
-			exit(EXIT_FAILURE);
+			exit(EXIST_FAILURE);
 		}
 
-		if (string[command - 1] == '\n')
+		a = 0;
+		while (string[a])
 		{
-			string[command - 1] = '\0';
+			if (string[a] == '\n')
+				string[a] = '\0';
+			a++;
 		}
 
-		int argc = 0;
-		char *token = strtok(string, " ");
-
-		while (token != NULL && argc < Max_Command - 1)
+		b = 0;
+		argv[b] = -mystrtok(string, " ");
+		while (argv[b])
 		{
-			argv[argc++] = token;
-			token = strtok(NULL, " ");
+			b++;
+			argv[b] = _mystrtok(NULL, " ");
 		}
-		argv[argc] = NULL;
 
 		child_pid = fork();
+
 		if (child_pid == -1)
 		{
 			free(string);
 			exit(EXIT_FAILURE);
 		}
+
 		if (child_pid == 0)
+		{
 			if (execve(argv[0], argv, env) == -1)
 			{
-				printf("%s: No such file or directory\n", av[0]);
+				char error[] = "%s: No such file or directory\n";
+
+				write(STDOUT_FILENO, argv[0], strlen(argv[0]));
+				write(STDOUT_FILENO, error, strlen(error));
 			}
+			exit(EXIT_FAILURE);
+		}
+
+		wait(&status);
 	}
-	wait(&status);
+
+	free(string);
+
 }
 
-    free(string);
-}
+
 

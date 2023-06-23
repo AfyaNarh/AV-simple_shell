@@ -20,7 +20,7 @@
                                                                                   
                                                                                
 void command_prompt(char **av, char **env);                                     
-                                                                                 
+char *av_strtok(char *str, const char *delim)                                                                                 
 
 #endif                                                                          
     
