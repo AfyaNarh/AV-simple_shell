@@ -20,7 +20,7 @@ void prompt_command(char **av, char **env)
 		if (character == -1)
 		{
 			free(string);
-			exit(EXIST_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 
 		a = 0;
@@ -32,11 +32,11 @@ void prompt_command(char **av, char **env)
 		}
 
 		b = 0;
-		argv[b] = -mystrtok(string, " ");
+		argv[b] = av_strtok(string, " ");
 		while (argv[b])
 		{
 			b++;
-			argv[b] = _mystrtok(NULL, " ");
+			argv[b] = av_strtok(NULL, " ");
 		}
 
 		child_pid = fork();
