@@ -9,7 +9,9 @@
  */
 char *av_strtok(char *str, const char *delim)
 {
-	char *next_token;
+	char *next_token = NULL;
+	char *current_token;
+	size_t token_len;
 
 	if (str != NULL)
 	{
@@ -19,12 +21,10 @@ char *av_strtok(char *str, const char *delim)
 	{
 		if (next_token == NULL)
 			return (NULL);
-
 		next_token = NULL;
 	}
-
-	char *current_token = next_token;
-	size_t token_len = strcspn(current_token, delim);
+	current_token = next_token;
+	token_len = strcspn(current_token, delim);
 
 	next_token = current_token + token_len;
 
